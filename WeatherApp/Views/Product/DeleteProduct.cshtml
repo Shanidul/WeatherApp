@@ -1,0 +1,51 @@
+﻿@model WeatherApp.ViewModels.DeleteProductViewModel
+
+<h2>Are you sure you want to delete?</h2>
+<hr />
+
+<form asp-controller="Product" asp-action="DeleteProduct" method="post">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <label asp-for="ProductName"></label>
+        </div>
+        <div class="col-sm-3">
+            @Model.ProductName
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <label>Description</label>
+        </div>
+        <div class="col-sm-3">
+            @Model.Description
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <label asp-for="Price"></label>
+        </div>
+        <div class="col-sm-3">
+            @Model.Price
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <label asp-for="ManufacturedBy"></label>
+        </div>
+        <div class="col-sm-3">
+            @Model.ManufacturedBy
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-sm-12">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a class="btn btn-primary" asp-controller="Product" asp-action="Index">Cancel</a>
+        </div>
+
+    </div>
+</form>
